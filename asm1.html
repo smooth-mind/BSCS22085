@@ -78,12 +78,12 @@
             text-align: left;
         }
 
-        /* Skills section styling */
-        #skills, #projects, #experience {
+        /* Skills, Video, and Social sections styling */
+        #skills, #projects, #experience, #video, #social, #awards, #degree, #side-projects, #contact {
             padding: 20px;
         }
 
-        #skills h2, #projects h2, #experience h2 {
+        #skills h2, #projects h2, #experience h2, #video h2, #social h2, #awards h2, #degree h2, #side-projects h2, #contact h2 {
             color: #333;
         }
 
@@ -94,6 +94,45 @@
 
         .skill-list li, .project-list li {
             margin-bottom: 5px;
+        }
+
+        /* Video section styling */
+        iframe {
+            width: 100%;
+            height: 315px;
+        }
+
+        /* Social media icons styling */
+        .social-icons {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+        }
+
+        .social-icons li {
+            display: inline-block;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        /* Social Media Feed Placeholder */
+        .social-feed {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .twitter-feed {
+            margin-top: 20px;
+        }
+
+        .twitter-timeline {
+            width: 100%;
+            height: 500px;
         }
     </style>
 </head>
@@ -107,6 +146,10 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#awards">Awards & Certifications</a></li>
+            <li><a href="#degree">Degree Program</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#social">Social</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -149,7 +192,6 @@
     <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
-        <!-- Technical Skills -->
         <h3>Technical Skills</h3>
         <ul class="skill-list">
             <li>C</li>
@@ -162,7 +204,6 @@
             <li>Machine Learning</li>
         </ul>
 
-        <!-- Soft Skills -->
         <h3>Soft Skills</h3>
         <ul class="skill-list">
             <li>Communication</li>
@@ -180,7 +221,7 @@
             <li><strong>Paint Brush Application:</strong> A drawing app created with Python and Tkinter.</li>
             <li><strong>Chess Game:</strong> A chess game developed using C++ and OOP principles.</li>
             <li><strong>Gomoku Game:</strong> A two-player Gomoku game built in C++.</li>
-            <li><strong>Machine Learning Projects:</strong> Involved in some machine learning projects (details to be added).</li>
+            <li><strong>Machine Learning Projects:</strong> Involved in some machine learning projects.</li>
         </ul>
     </section>
 
@@ -194,18 +235,62 @@
         </ul>
     </section>
 
-    <!-- JavaScript for Language Switching -->
-    <script>
-        function setLanguage(language) {
-            // Hide all language content
-            document.querySelectorAll('.lang-content').forEach(function(content) {
-                content.style.display = 'none';
-            });
+    <!-- Awards & Certifications Section -->
+    <section id="awards">
+        <h2>Awards & Certifications</h2>
+        <ul class="project-list">
+            <li><strong>Microsoft Office Certificate:</strong> Certified in Microsoft Office tools and software.</li>
+        </ul>
+    </section>
 
-            // Show the selected language content
-            document.querySelector('.lang-' + language).style.display = 'block';
+    <!-- Degree Program Section -->
+    <section id="degree">
+        <h2>Degree Program</h2>
+        <p><strong>Bachelor of Science in Computer Science:</strong> Information Technology University (ITU), expected graduation in 2026.</p>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video">
+        <h2>Video Content</h2>
+        <iframe src="https://www.youtube.com/embed/Aq5WXmQQooo" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <!-- Social Media Feed Section -->
+    <section id="social">
+        <h2>Connect with Me</h2>
+        <ul class="social-icons">
+            <li><a href="https://github.com/smooth-mind" target="_blank">GitHub</a></li>
+        </ul>
+        <div class="social-feed">
+            <h3>Latest Updates</h3>
+            <!-- Twitter Embed -->
+            <a class="twitter-timeline" href="https://twitter.com/TwitterDev" data-tweet-limit="3">Tweets by TwitterDev</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </section>
+
+    <!-- Side Projects Section -->
+    <section id="side-projects">
+        <h2>Side Projects</h2>
+        <ul class="project-list">
+            <li><strong>Machine Learning Projects:</strong> Involved in various machine learning side projects.</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>You can reach me at <a href="mailto:abdullahraffay29@gmail.com">abdullahraffay29@gmail.com</a>.</p>
+    </section>
+
+    <script>
+        function setLanguage(lang) {
+            var languages = document.querySelectorAll('.lang-content');
+            languages.forEach(function(langContent) {
+                langContent.style.display = 'none';
+            });
+            document.querySelector('.lang-' + lang).style.display = 'block';
         }
     </script>
-
 </body>
 </html>
