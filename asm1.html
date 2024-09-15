@@ -77,6 +77,24 @@
             direction: ltr;
             text-align: left;
         }
+
+        /* Skills section styling */
+        #skills, #projects, #experience {
+            padding: 20px;
+        }
+
+        #skills h2, #projects h2, #experience h2 {
+            color: #333;
+        }
+
+        .skill-list, .project-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skill-list li, .project-list li {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -88,6 +106,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -100,7 +119,7 @@
         <button onclick="setLanguage('fr')">Français (French)</button>
     </div>
 
-    <!-- Content Section -->
+    <!-- Home Section -->
     <section id="home">
         <!-- English Content -->
         <div class="lang-content lang-en">
@@ -125,6 +144,54 @@
             <h1>Bienvenue sur mon profil professionnel</h1>
             <p>Ceci est la page d'accueil du portfolio professionnel de Hafiz Abdullah Rafay.</p>
         </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <!-- Technical Skills -->
+        <h3>Technical Skills</h3>
+        <ul class="skill-list">
+            <li>C</li>
+            <li>C++</li>
+            <li>Python</li>
+            <li>MySQL</li>
+            <li>SQL Database</li>
+            <li>Data Structures</li>
+            <li>Algorithms</li>
+            <li>Machine Learning</li>
+        </ul>
+
+        <!-- Soft Skills -->
+        <h3>Soft Skills</h3>
+        <ul class="skill-list">
+            <li>Communication</li>
+            <li>Adaptability</li>
+            <li>Teamwork</li>
+            <li>Leadership</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul class="project-list">
+            <li><strong>Multi-Player Ludo Game:</strong> A digital Ludo game built with C++ and SFML.</li>
+            <li><strong>Paint Brush Application:</strong> A drawing app created with Python and Tkinter.</li>
+            <li><strong>Chess Game:</strong> A chess game developed using C++ and OOP principles.</li>
+            <li><strong>Gomoku Game:</strong> A two-player Gomoku game built in C++.</li>
+            <li><strong>Machine Learning Projects:</strong> Involved in some machine learning projects (details to be added).</li>
+        </ul>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul class="project-list">
+            <li><strong>General Secretary, GDSC ITU:</strong> Currently the General Secretary of the Google Developer Student Club at ITU.</li>
+            <li><strong>Media Club Society:</strong> Participated as a member of the ITU Media Club Society.</li>
+            <li><strong>Artist Society:</strong> Involved with the ITU Artist Society.</li>
+        </ul>
     </section>
 
     <!-- JavaScript for Language Switching -->
