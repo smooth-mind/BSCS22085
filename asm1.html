@@ -8,55 +8,75 @@
     <meta name="author" content="Hafiz Abdullah Raffay">
     <title>Professional Profile</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Resetting margin and padding for consistency */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #1e1e1e;
-            color: #f4f4f4;
+            box-sizing: border-box;
         }
 
+        /* Body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #181818;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Container class for padding */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Navigation Bar */
         nav {
-            background-color: #333;
-            padding: 10px 0;
+            background-color: #1e1e1e;
+            padding: 15px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
         }
 
         nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            list-style: none;
         }
 
         nav ul li {
-            display: inline-block;
-            padding: 14px 20px;
+            margin: 0 20px;
         }
 
         nav ul li a {
             color: #f4f4f4;
             text-decoration: none;
             font-weight: 600;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
             color: #50C878;
         }
 
+        /* Mobile responsiveness for the navbar */
         @media screen and (max-width: 600px) {
-            nav ul li {
-                display: block;
+            nav ul {
+                flex-direction: column;
                 text-align: center;
-                padding: 10px;
+            }
+
+            nav ul li {
+                margin-bottom: 15px;
             }
         }
 
+        /* Language Buttons Styling */
         .lang-buttons {
-            margin: 20px;
             text-align: center;
+            margin: 20px 0;
         }
 
         .lang-buttons button {
@@ -67,85 +87,111 @@
             background-color: #50C878;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         .lang-buttons button:hover {
             background-color: #2a9f68;
+            transform: scale(1.05);
         }
 
-        /* Hide all languages initially */
-        .lang-content {
-            display: none;
+        /* Section styling */
+        section {
+            padding: 40px;
+            margin: 20px 0;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
 
-        /* Display English content by default */
-        .lang-en {
-            display: block;
+        h2 {
+            color: #50C878;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
-        /* Specific text alignment for Arabic and Urdu (RTL) */
-        .lang-ar, .lang-ur {
-            direction: rtl;
-            text-align: right;
+        h3 {
+            color: #50C878;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
         }
 
-        /* Specific text alignment for English and French (LTR) */
-        .lang-en, .lang-fr {
-            direction: ltr;
+        /* Skill List */
+        ul.skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul.skill-list li {
+            background-color: #333;
+            color: #f4f4f4;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Project List */
+        ul.project-list {
+            list-style-type: none;
+            padding: 0;
             text-align: left;
         }
 
-        section {
-            padding: 40px 20px;
-            margin: 20px 0;
-            background-color: #2b2b2b;
-            border-radius: 10px;
+        ul.project-list li {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 8px;
+            transition: transform 0.3s;
         }
 
-        h2, h3 {
-            color: #50C878;
-            text-align: center;
+        ul.project-list li:hover {
+            transform: scale(1.05);
         }
 
-        ul.skill-list, ul.project-list, ul.social-icons {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        ul.skill-list li, ul.project-list li {
-            margin-bottom: 8px;
-        }
-        
+        /* Iframe for video */
         iframe {
             width: 100%;
-            height: 315px;
+            height: 400px;
+            border: none;
             border-radius: 10px;
+            margin: 20px 0;
         }
 
-        .social-icons {
+        /* Social Media Icons */
+        ul.social-icons {
             display: flex;
-            gap: 15px;
             justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
         }
 
-        .social-icons a {
+        ul.social-icons li a {
             font-size: 24px;
-            text-decoration: none;
             color: #50C878;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
         }
 
-        .social-icons a:hover {
+        ul.social-icons li a:hover {
             color: #66e092;
+            transform: scale(1.2);
         }
 
+        /* Feed section styling */
         .social-feed {
             background-color: #333;
-            padding: 20px;
-            text-align: center;
+            padding: 30px;
             border-radius: 10px;
             color: #f4f4f4;
+            margin-top: 20px;
         }
 
         .social-feed a {
@@ -165,11 +211,13 @@
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#awards">Awards & Certifications</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#short-courses">Short Courses</a></li>
+            <li><a href="#side-projects">Side Projects</a></li>
+            <li><a href="#hackathons">Hackathons</a></li>
             <li><a href="#degree">Degree Program</a></li>
             <li><a href="#video">Video</a></li>
             <li><a href="#feed">Feed</a></li>
@@ -186,30 +234,27 @@
     </div>
 
     <!-- Home Section -->
-    <section id="home">
+    <section id="home" class="container">
         <div class="lang-content lang-en">
-            <h1>Welcome to My Professional Profile</h1>
+            <h2>Welcome to My Professional Profile</h2>
             <p>This is the homepage of Hafiz Abdullah Raffay's professional portfolio.</p>
         </div>
-
         <div class="lang-content lang-ar">
-            <h1>مرحبًا بك في ملفي الشخصي الاحترافي</h1>
+            <h2>مرحبًا بك في ملفي الشخصي الاحترافي</h2>
             <p>هذه الصفحة الرئيسية لمحفظة عبد الله رفيع المهنية.</p>
         </div>
-
         <div class="lang-content lang-ur">
-            <h1>میرے پیشہ ورانہ پروفائل میں خوش آمدید</h1>
+            <h2>میرے پیشہ ورانہ پروفائل میں خوش آمدید</h2>
             <p>یہ عبد اللہ رفیع کے پیشہ ورانہ پورٹ فولیو کا ہوم پیج ہے۔</p>
         </div>
-
         <div class="lang-content lang-fr">
-            <h1>Bienvenue sur mon profil professionnel</h1>
+            <h2>Bienvenue sur mon profil professionnel</h2>
             <p>Ceci est la page d'accueil du portfolio professionnel de Hafiz Abdullah Raffay.</p>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" class="container">
         <h2>Skills</h2>
         <h3>Technical Skills</h3>
         <ul class="skill-list">
@@ -233,7 +278,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" class="container">
         <h2>Projects</h2>
         <ul class="project-list">
             <li><strong>Multi-Player Ludo Game:</strong> A digital Ludo game built with C++ and SFML.</li>
@@ -244,8 +289,25 @@
         </ul>
     </section>
 
+    <!-- Side Projects Section -->
+    <section id="side-projects" class="container">
+        <h2>Side Projects</h2>
+        <ul class="project-list">
+            <li><strong>Linear Regression Project:</strong> Built a simple linear regression model to predict housing prices.</li>
+            <li><strong>K-Means Clustering:</strong> Created a basic clustering algorithm to group similar data points in a dataset.</li>
+        </ul>
+    </section>
+
+    <!-- Hackathons Section -->
+    <section id="hackathons" class="container">
+        <h2>Hackathons</h2>
+        <ul class="project-list">
+            <li><strong>Code Rush 2024:</strong> Participated in Code Rush, held at ITU and organized by GDSC ITU in March 2024.</li>
+        </ul>
+    </section>
+
     <!-- Experience Section -->
-    <section id="experience">
+    <section id="experience" class="container">
         <h2>Experience</h2>
         <ul class="project-list">
             <li><strong>General Secretary, GDSC ITU:</strong> Currently the General Secretary of the Google Developer Student Club at ITU.</li>
@@ -255,27 +317,35 @@
     </section>
 
     <!-- Awards & Certifications Section -->
-    <section id="awards">
+    <section id="awards" class="container">
         <h2>Awards & Certifications</h2>
         <ul class="project-list">
             <li><strong>Microsoft Office Certificate:</strong> Certified in Microsoft Office tools and software.</li>
         </ul>
     </section>
 
+    <!-- Short Courses Section -->
+    <section id="short-courses" class="container">
+        <h2>Short Courses</h2>
+        <ul class="project-list">
+            <li><strong>Introduction to Machine Learning:</strong> Completed a short course on the basics of machine learning.</li>
+        </ul>
+    </section>
+
     <!-- Degree Program Section -->
-    <section id="degree">
+    <section id="degree" class="container">
         <h2>Degree Program</h2>
         <p><strong>Bachelor of Science in Computer Science:</strong> Information Technology University (ITU), expected graduation in 2026.</p>
     </section>
 
     <!-- Video Section -->
-    <section id="video">
+    <section id="video" class="container">
         <h2>Video Introduction</h2>
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video"></iframe>
     </section>
 
-    <!-- Social Media Section -->
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="container">
         <h2>Contact</h2>
         <ul class="social-icons">
             <li><a href="https://github.com/smooth-mind" target="_blank">GitHub</a></li>
@@ -284,22 +354,32 @@
     </section>
 
     <!-- Feed Section -->
-    <section id="feed" class="social-feed">
+    <section id="feed" class="container social-feed">
         <h2>Feed</h2>
         <p>Check out my Reddit profile for latest discussions and contributions:</p>
         <a href="https://reddit.com/u/smooth-mind" target="_blank">Reddit Feed</a>
     </section>
 
+    <!-- JavaScript for Language Switching -->
     <script>
+        // Hide all language contents initially
+        window.onload = function() {
+            var contents = document.querySelectorAll('.lang-content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';  // Initially hide all language sections
+            });
+        };
+
+        // Function to display selected language and hide others
         function setLanguage(lang) {
             var contents = document.querySelectorAll('.lang-content');
             contents.forEach(function(content) {
-                content.style.display = 'none';
+                content.style.display = 'none';  // Hide all language sections
             });
 
             var selectedLang = document.querySelector('.lang-' + lang);
             if (selectedLang) {
-                selectedLang.style.display = 'block';
+                selectedLang.style.display = 'block';  // Show the selected language
             }
         }
     </script>
