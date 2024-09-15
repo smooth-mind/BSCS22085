@@ -3,57 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Profile of Hafiz Abdullah Rafay">
+    <meta name="description" content="Professional Profile of Hafiz Abdullah Raffay">
     <meta name="keywords" content="HTML, CSS, Professional Profile, Portfolio, Multilingual">
-    <meta name="author" content="Hafiz Abdullah Rafay">
+    <meta name="author" content="Hafiz Abdullah Raffay">
     <title>Professional Profile</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #1e1e1e;
+            color: #f4f4f4;
         }
 
         nav {
             background-color: #333;
-            overflow: hidden;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
 
         nav ul li {
-            float: left;
-            display: block;
+            display: inline-block;
             padding: 14px 20px;
         }
 
         nav ul li a {
-            color: white;
+            color: #f4f4f4;
             text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: #50C878;
         }
 
         @media screen and (max-width: 600px) {
             nav ul li {
-                float: none;
-                text-align: center;
                 display: block;
+                text-align: center;
+                padding: 10px;
             }
         }
 
-        /* Language buttons */
         .lang-buttons {
             margin: 20px;
+            text-align: center;
         }
 
         .lang-buttons button {
             margin: 5px;
-            padding: 10px 15px;
+            padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            background-color: #50C878;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .lang-buttons button:hover {
+            background-color: #2a9f68;
         }
 
         /* Hide all languages initially */
@@ -78,61 +96,66 @@
             text-align: left;
         }
 
-        /* Skills, Video, and Social sections styling */
-        #skills, #projects, #experience, #video, #social, #awards, #degree, #side-projects, #contact {
-            padding: 20px;
+        section {
+            padding: 40px 20px;
+            margin: 20px 0;
+            background-color: #2b2b2b;
+            border-radius: 10px;
         }
 
-        #skills h2, #projects h2, #experience h2, #video h2, #social h2, #awards h2, #degree h2, #side-projects h2, #contact h2 {
-            color: #333;
+        h2, h3 {
+            color: #50C878;
+            text-align: center;
         }
 
-        .skill-list, .project-list {
+        ul.skill-list, ul.project-list, ul.social-icons {
             list-style-type: none;
             padding: 0;
+            text-align: center;
         }
 
-        .skill-list li, .project-list li {
-            margin-bottom: 5px;
+        ul.skill-list li, ul.project-list li {
+            margin-bottom: 8px;
         }
-
-        /* Video section styling */
+        
         iframe {
             width: 100%;
             height: 315px;
+            border-radius: 10px;
         }
 
-        /* Social media icons styling */
         .social-icons {
-            list-style-type: none;
             display: flex;
             gap: 15px;
-            padding: 0;
-        }
-
-        .social-icons li {
-            display: inline-block;
+            justify-content: center;
         }
 
         .social-icons a {
             font-size: 24px;
             text-decoration: none;
+            color: #50C878;
         }
 
-        /* Social Media Feed Placeholder */
+        .social-icons a:hover {
+            color: #66e092;
+        }
+
         .social-feed {
-            background-color: #f0f0f0;
+            background-color: #333;
             padding: 20px;
             text-align: center;
+            border-radius: 10px;
+            color: #f4f4f4;
         }
 
-        .twitter-feed {
-            margin-top: 20px;
+        .social-feed a {
+            color: #50C878;
+            font-weight: bold;
+            text-decoration: none;
         }
 
-        .twitter-timeline {
-            width: 100%;
-            height: 500px;
+        .social-feed a:hover {
+            color: #66e092;
         }
     </style>
 </head>
@@ -149,7 +172,7 @@
             <li><a href="#awards">Awards & Certifications</a></li>
             <li><a href="#degree">Degree Program</a></li>
             <li><a href="#video">Video</a></li>
-            <li><a href="#social">Social</a></li>
+            <li><a href="#feed">Feed</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -164,28 +187,24 @@
 
     <!-- Home Section -->
     <section id="home">
-        <!-- English Content -->
         <div class="lang-content lang-en">
             <h1>Welcome to My Professional Profile</h1>
-            <p>This is the homepage of Hafiz Abdullah Rafay's professional portfolio.</p>
+            <p>This is the homepage of Hafiz Abdullah Raffay's professional portfolio.</p>
         </div>
 
-        <!-- Arabic Content -->
         <div class="lang-content lang-ar">
             <h1>مرحبًا بك في ملفي الشخصي الاحترافي</h1>
             <p>هذه الصفحة الرئيسية لمحفظة عبد الله رفيع المهنية.</p>
         </div>
 
-        <!-- Urdu Content -->
         <div class="lang-content lang-ur">
             <h1>میرے پیشہ ورانہ پروفائل میں خوش آمدید</h1>
             <p>یہ عبد اللہ رفیع کے پیشہ ورانہ پورٹ فولیو کا ہوم پیج ہے۔</p>
         </div>
 
-        <!-- French Content -->
         <div class="lang-content lang-fr">
             <h1>Bienvenue sur mon profil professionnel</h1>
-            <p>Ceci est la page d'accueil du portfolio professionnel de Hafiz Abdullah Rafay.</p>
+            <p>Ceci est la page d'accueil du portfolio professionnel de Hafiz Abdullah Raffay.</p>
         </div>
     </section>
 
@@ -251,46 +270,39 @@
 
     <!-- Video Section -->
     <section id="video">
-        <h2>Video Content</h2>
-        <iframe src="https://www.youtube.com/embed/Aq5WXmQQooo" frameborder="0" allowfullscreen></iframe>
+        <h2>Video Introduction</h2>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video"></iframe>
     </section>
 
-    <!-- Social Media Feed Section -->
-    <section id="social">
-        <h2>Connect with Me</h2>
-        <ul class="social-icons">
-            <li><a href="https://github.com/smooth-mind" target="_blank">GitHub</a></li>
-        </ul>
-        <div class="social-feed">
-            <h3>Latest Updates</h3>
-            <!-- Twitter Embed -->
-            <a class="twitter-timeline" href="https://twitter.com/TwitterDev" data-tweet-limit="3">Tweets by TwitterDev</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-    </section>
-
-    <!-- Side Projects Section -->
-    <section id="side-projects">
-        <h2>Side Projects</h2>
-        <ul class="project-list">
-            <li><strong>Machine Learning Projects:</strong> Involved in various machine learning side projects.</li>
-        </ul>
-    </section>
-
-    <!-- Contact Section -->
+    <!-- Social Media Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>You can reach me at <a href="mailto:abdullahraffay29@gmail.com">abdullahraffay29@gmail.com</a>.</p>
+        <ul class="social-icons">
+            <li><a href="https://github.com/smooth-mind" target="_blank">GitHub</a></li>
+            <li><a href="mailto:abdullahraffay29@gmail.com">Email</a></li>
+        </ul>
+    </section>
+
+    <!-- Feed Section -->
+    <section id="feed" class="social-feed">
+        <h2>Feed</h2>
+        <p>Check out my Reddit profile for latest discussions and contributions:</p>
+        <a href="https://reddit.com/u/smooth-mind" target="_blank">Reddit Feed</a>
     </section>
 
     <script>
         function setLanguage(lang) {
-            var languages = document.querySelectorAll('.lang-content');
-            languages.forEach(function(langContent) {
-                langContent.style.display = 'none';
+            var contents = document.querySelectorAll('.lang-content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
             });
-            document.querySelector('.lang-' + lang).style.display = 'block';
+
+            var selectedLang = document.querySelector('.lang-' + lang);
+            if (selectedLang) {
+                selectedLang.style.display = 'block';
+            }
         }
     </script>
+
 </body>
 </html>
