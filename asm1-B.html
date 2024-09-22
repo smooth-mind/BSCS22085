@@ -393,6 +393,17 @@
             document.querySelector('.hackathons-list').innerHTML = hackathons;
         }
 
+        // Populate all sections on page load
+        window.onload = function() {
+            populateSkills();
+            populateProjects();
+            populateExperience();
+            populateAwards();
+            populateShortCourses();
+            populateSideProjects();
+            populateHackathons();
+        };
+
         
         
     </script>
