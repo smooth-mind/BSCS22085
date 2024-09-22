@@ -356,6 +356,44 @@
             ]
         };
 
+        function populateSkills() {
+            const techSkills = profileData.skills.technical.map(skill => `<li>${skill}</li>`).join('');
+            const softSkills = profileData.skills.soft.map(skill => `<li>${skill}</li>`).join('');
+            document.querySelector('.skill-list.technical').innerHTML = techSkills;
+            document.querySelector('.skill-list.soft').innerHTML = softSkills;
+        }
+
+        function populateProjects() {
+            const projects = profileData.projects.map(project => `<li><strong>${project.name}:</strong> ${project.description}</li>`).join('');
+            document.querySelector('.project-list').innerHTML = projects;
+        }
+
+        function populateExperience() {
+            const experience = profileData.experience.map(exp => `<li><strong>${exp.role}:</strong> ${exp.description}</li>`).join('');
+            document.querySelector('.experience-list').innerHTML = experience;
+        }
+
+        function populateAwards() {
+            const awards = profileData.awards.map(award => `<li>${award}</li>`).join('');
+            document.querySelector('.awards-list').innerHTML = awards;
+        }
+
+        function populateShortCourses() {
+            const shortCourses = profileData.shortCourses.map(course => `<li>${course}</li>`).join('');
+            document.querySelector('.short-courses-list').innerHTML = shortCourses;
+        }
+
+        function populateSideProjects() {
+            const sideProjects = profileData.sideProjects.map(project => `<li><strong>${project.name}:</strong> ${project.description}</li>`).join('');
+            document.querySelector('.side-projects-list').innerHTML = sideProjects;
+        }
+
+        function populateHackathons() {
+            const hackathons = profileData.hackathons.map(hackathon => `<li>${hackathon}</li>`).join('');
+            document.querySelector('.hackathons-list').innerHTML = hackathons;
+        }
+
+        
         
     </script>
 
