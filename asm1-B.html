@@ -136,14 +136,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        /* Project List */
-        ul.project-list {
+        /* Project List with hover effect */
+        ul.project-list, ul.side-projects-list, ul.hackathons-list, ul.experience-list, ul.awards-list, ul.short-courses-list {
             list-style-type: none;
             padding: 0;
             text-align: left;
         }
 
-        ul.project-list li {
+        ul.project-list li, ul.side-projects-list li, ul.hackathons-list li, ul.experience-list li, ul.awards-list li, ul.short-courses-list li {
             margin: 15px 0;
             padding: 10px;
             background-color: #333;
@@ -151,7 +151,7 @@
             transition: transform 0.3s;
         }
 
-        ul.project-list li:hover {
+        ul.project-list li:hover, ul.side-projects-list li:hover, ul.hackathons-list li:hover, ul.experience-list li:hover, ul.awards-list li:hover, ul.short-courses-list li:hover {
             transform: scale(1.05);
         }
 
@@ -239,15 +239,15 @@
             <h2>Welcome to My Professional Profile</h2>
             <p>This is the homepage of Hafiz Abdullah Raffay's professional portfolio.</p>
         </div>
-        <div class="lang-content lang-ar">
+        <div class="lang-content lang-ar" style="display:none;">
             <h2>مرحبًا بك في ملفي الشخصي الاحترافي</h2>
             <p>هذه الصفحة الرئيسية لمحفظة عبد الله رفيع المهنية.</p>
         </div>
-        <div class="lang-content lang-ur">
+        <div class="lang-content lang-ur" style="display:none;">
             <h2>میرے پیشہ ورانہ پروفائل میں خوش آمدید</h2>
             <p>یہ عبد اللہ رفیع کے پیشہ ورانہ پورٹ فولیو کا ہوم پیج ہے۔</p>
         </div>
-        <div class="lang-content lang-fr">
+        <div class="lang-content lang-fr" style="display:none;">
             <h2>Bienvenue sur mon profil professionnel</h2>
             <p>Ceci est la page d'accueil du portfolio professionnel de Hafiz Abdullah Raffay.</p>
         </div>
@@ -327,7 +327,7 @@
         <a href="https://www.reddit.com/r/ProgrammerHumor/comments/1fgtpp8/ahtherestheproblem/#lightbox" target="_blank">Reddit Feed</a>
     </section>
 
-    <!-- JavaScript for Populating Data -->
+    <!-- JavaScript for Populating Data and Language Switching -->
     <script>
         const profileData = {
             name: "Hafiz Abdullah Raffay",
@@ -404,8 +404,18 @@
             populateHackathons();
         };
 
-        
-        
+        // Function to switch languages and show the correct language content
+        function setLanguage(lang) {
+            var contents = document.querySelectorAll('.lang-content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';  // Hide all language sections
+            });
+
+            var selectedLang = document.querySelector('.lang-' + lang);
+            if (selectedLang) {
+                selectedLang.style.display = 'block';  // Show the selected language
+            }
+        }
     </script>
 
 </body>
