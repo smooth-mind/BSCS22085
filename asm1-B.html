@@ -21,6 +21,7 @@
             background-color: #181818;
             color: #fff;
             line-height: 1.6;
+            scroll-behavior: smooth; /* Enable smooth scrolling */
         }
 
         /* Container class for padding */
@@ -62,14 +63,45 @@
         }
 
         /* Mobile responsiveness for the navbar */
+        .mobile-toggle {
+            display: none;
+            background-color: #50C878;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .desktop-nav {
+            display: flex;
+        }
+
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            text-align: center;
+        }
+
         @media screen and (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-                text-align: center;
+            .desktop-nav {
+                display: none;
             }
 
-            nav ul li {
-                margin-bottom: 15px;
+            .mobile-toggle {
+                display: block;
+            }
+
+            .mobile-nav.active {
+                display: flex;
+            }
+
+            /* Hide certain sections in the header */
+            .mobile-nav li a[href="#video"],
+            .mobile-nav li a[href="#feed"],
+            .mobile-nav li a[href="#side-projects"],
+            .mobile-nav li a[href="#short-courses"] {
+                display: none;
             }
         }
 
@@ -203,24 +235,44 @@
         .social-feed a:hover {
             color: #66e092;
         }
+
+        /* Scroll offset adjustment */
+        section {
+            scroll-margin-top: 80px; /* Adjust based on header height */
+        }
+
+        /* RTL/LTR for translated lines */
+        .rtl-text {
+            direction: rtl;
+            text-align: right;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Mobile Navbar Toggle Button -->
+    <button class="mobile-toggle" onclick="toggleMobileNav()">Menu</button>
+
     <!-- Navigation Bar -->
     <nav>
-        <ul>
+        <!-- Desktop Nav -->
+        <ul class="desktop-nav">
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#awards">Awards</a></li>
-            <li><a href="#short-courses">Short Courses</a></li>
-            <li><a href="#side-projects">Side Projects</a></li>
-            <li><a href="#hackathons">Hackathons</a></li>
             <li><a href="#degree">Degree Program</a></li>
-            <li><a href="#video">Video</a></li>
-            <li><a href="#feed">Feed</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- Mobile Nav -->
+        <ul class="mobile-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#degree">Degree Program</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -239,11 +291,11 @@
             <h2>Welcome to My Professional Profile</h2>
             <p>This is the homepage of Hafiz Abdullah Raffay's professional portfolio.</p>
         </div>
-        <div class="lang-content lang-ar" style="display:none;">
+        <div class="lang-content lang-ar rtl-text" style="display:none;">
             <h2>مرحبًا بك في ملفي الشخصي الاحترافي</h2>
             <p>هذه الصفحة الرئيسية لمحفظة عبد الله رفيع المهنية.</p>
         </div>
-        <div class="lang-content lang-ur" style="display:none;">
+        <div class="lang-content lang-ur rtl-text" style="display:none;">
             <h2>میرے پیشہ ورانہ پروفائل میں خوش آمدید</h2>
             <p>یہ عبد اللہ رفیع کے پیشہ ورانہ پورٹ فولیو کا ہوم پیج ہے۔</p>
         </div>
@@ -311,24 +363,47 @@
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video"></iframe>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container">
-        <h2>Contact</h2>
-        <ul class="social-icons">
-            <li><a href="https://github.com/smooth-mind" target="_blank">GitHub</a></li>
-            <li><a href="mailto:abdullahraffay29@gmail.com">Email</a></li>
-        </ul>
-    </section>
-
-    <!-- Feed Section -->
+    <!-- Feed Section (moved before footer) -->
     <section id="feed" class="container social-feed">
         <h2>Feed</h2>
         <p>Check out my Reddit profile for latest discussions and contributions:</p>
         <a href="https://www.reddit.com/r/ProgrammerHumor/comments/1fgtpp8/ahtherestheproblem/#lightbox" target="_blank">Reddit Feed</a>
     </section>
 
-    <!-- JavaScript for Populating Data and Language Switching -->
+    <!-- Footer Section with Contact -->
+    <footer id="contact" class="container">
+        <h2>Contact</h2>
+        <ul class="social-icons">
+            <li><a href="https://github.com/smooth-mind" target="_blank">GitHub</a></li>
+            <li><a href="mailto:abdullahraffay29@gmail.com">Email</a></li>
+        </ul>
+    </footer>
+
+    <!-- JavaScript for Populating Data, Language Switching & Mobile Nav -->
     <script>
+        function toggleMobileNav() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        }
+
+        // Close mobile menu after clicking a link
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.mobile-nav').classList.remove('active');
+            });
+        });
+
+        function setLanguage(lang) {
+            var contents = document.querySelectorAll('.lang-content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';  // Hide all language sections
+            });
+
+            var selectedLang = document.querySelector('.lang-' + lang);
+            if (selectedLang) {
+                selectedLang.style.display = 'block';  // Show the selected language
+            }
+        }
+
         const profileData = {
             name: "Hafiz Abdullah Raffay",
             skills: {
@@ -403,19 +478,6 @@
             populateSideProjects();
             populateHackathons();
         };
-
-        // Function to switch languages and show the correct language content
-        function setLanguage(lang) {
-            var contents = document.querySelectorAll('.lang-content');
-            contents.forEach(function(content) {
-                content.style.display = 'none';  // Hide all language sections
-            });
-
-            var selectedLang = document.querySelector('.lang-' + lang);
-            if (selectedLang) {
-                selectedLang.style.display = 'block';  // Show the selected language
-            }
-        }
     </script>
 
 </body>
